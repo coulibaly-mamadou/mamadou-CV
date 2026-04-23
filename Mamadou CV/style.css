@@ -1,0 +1,238 @@
+/* --- RESET DE BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif; /* Police principale */
+    background-color: #f5f5f5; /* Fond gris de la page entière */
+    color: #333;
+    line-height: 1.5;
+    padding: 40px 0; /* Espace en haut et en bas de l'écran */
+}
+
+/* Application de LATO pour tous les titres */
+h1, h2, h3, strong {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+/* Retrait du soulignement par défaut sur tous les liens */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- VARIABLES (Couleurs principales) --- */
+:root {
+    --bleu-turquoise: #17abb3; /* La couleur header */
+    --gris-clair: #e3e3e3;
+}
+
+
+/* --- EN-TÊTE (HEADER) --- */
+header {
+    background-color: var(--bleu-turquoise);
+    color: white;
+    display: flex; /* On garde le flex */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0; /* On enlève le padding global pour gérer l'alignement interne */
+    box-shadow: 0 4px 6px #333333;
+}
+
+/* On crée un bloc spécifique pour la photo qui fait la même taille que la colonne grise */
+.photo-profil {
+    width: 35%; /* Exactement la même largeur que .colonne-gauche */
+    background-color:#17abb3; /* Optionnel: assombrit légèrement derrière la photo pour le style */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.photo-profil img {
+    width: 140px; /* Taille légèrement réduite pour bien tenir dans les 35% */
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid #f5f5f5;
+    object-fit: cover;
+    margin-right: 0; /* On enlève la marge de droite car le centrage est géré par le parent */
+}
+
+/* Le bloc de texte prend le reste de la place (65%) */
+.header-infos {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Aligne le texte à gauche au lieu de centrer */
+    padding-left: 40px; /* Espace entre la limite de la photo et le texte */
+}
+
+.header-infos h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.header-infos h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+
+
+/* --- BLOC CONTACT (2 LIGNES / 2 COLONNES) --- */
+.coordonnees {
+    display: grid;
+    grid-template-columns: auto auto; /* Crée 2 colonnes */
+    gap: 10px 40px; /* Espace : 10px entre les lignes, 40px entre les colonnes */
+    font-size: 0.9rem;
+}
+
+.coordonnees span {
+    display: flex;
+    align-items: center; /* Aligne l'icône et le texte proprement */
+}
+
+.coordonnees i {
+    margin-right: 10px; /* Espace entre l'icône et le texte */
+    font-size: 1rem;
+}
+
+/* --- STRUCTURE DU CORPS (FLEXBOX) --- */
+.conteneur-cv {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto; /* Centre le corps sous le header */
+    background-color: white;
+    box-shadow: 0 4px #333333; /* Ombre légère */
+}
+
+h3 {
+    color: var(--bleu-turquoise);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* --- COLONNE DE GAUCHE --- */
+.colonne-gauche {
+    width: 35%;
+    background-color: var(--gris-clair);
+    padding: 40px 30px;
+}
+
+.colonne-gauche section {
+    margin-bottom: 35px;
+}
+
+.ligne-gauche {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.etoiles {
+    color: var(--bleu-turquoise);
+    letter-spacing: 2px;
+}
+
+/* Puces carrées pour les listes */
+.liste-carre {
+    list-style-type: square;
+    padding-left: 20px;
+    font-size: 0.9rem;
+}
+
+.liste-carre li {
+    margin-bottom: 8px;
+}
+
+.liste-carre li::marker {
+    color: var(--bleu-turquoise); /* Colore les petits carrés en turquoise */
+}
+
+/* --- COLONNE DE DROITE --- */
+.colonne-droite {
+    width: 65%;
+    padding: 40px;
+}
+
+.colonne-droite section {
+    margin-bottom: 35px;
+}
+
+.colonne-droite p {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    text-align: justify;
+    color: #333333;
+}
+
+/* Alignement des expériences/formations */
+.bloc-experience {
+    margin-bottom: 20px;
+}
+
+.titre-et-date {
+    display: flex;
+    justify-content: space-between; /* Titre à gauche, Date à droite */
+    align-items: flex-end;
+}
+
+.titre-et-date strong {
+    font-size: 1.05rem;
+    color: #333333;
+}
+
+.titre-et-date .date {
+    color: var(--bleu-turquoise);
+    font-size: 0.9rem;
+}
+
+.sous-titre {
+    font-style: italic;
+    color: #666;
+    margin-top: 2px;
+}
+
+/* --- PIED DE PAGE (FOOTER) --- */
+footer {
+    background-color: var(--bleu-turquoise);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow:#333333;
+}
+
+.reseaux-sociaux {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.reseaux-sociaux a {
+    margin: 0 10px;
+    transition: opacity 0.3s ease;
+}
+
+.reseaux-sociaux a:hover {
+    opacity: 0.7; /* Petit effet au survol de la souris */
+    text-decoration: none;
+}
+
+footer p {
+    font-size: 0.8rem;
+}
